@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">Aplicativo Media Escolar</string>
+    <string name="mainTitle">Calculadora de Média</string>
+    <string name="nome">Nome</string>
+    <string name="_1_bimestre">1° Bimestre</string>
+    <string name="insira_o_nome_do_aluno">Insira o nome do aluno</string>
+    <string name="_2_bimestre">2° Bimestre</string>
+    <string name="_3_bimestre">3° Bimestre</string>
+    <string name="_4_bimestre">4° Bimestre</string>
+    <string name="notas">Notas</string>
+    <string name="m_dias">MÉDIAS</string>
+    <string name="matem_tica">Matemática:</string>
+    <string name="menos">-</string>
+    <string name="disciplina">Disciplina</string>
+    <string name="hist_ria">História</string>
+    <string name="fis_ca">Fisíca</string>
+    <string name="nota">-</string>
+    <string name="nota2">-</string>
+    <string name="nota3">-</string>
+    <string name="nota4">-</string>
+    <string name="resultado1">-------</string>
+    <string name="resultado2">-------</string>
+    <string name="resultado3">-------</string>
+    <string name="portugues">Português:</string>
+    <string name="geografia">Geografia:</string>
+    <string name="resultado4">-------</string>
+    <string name="resultado5">-------</string>
+    <string name="calcular">CALCULAR</string>
+    <string name="boletim_escolar">BOLETIM ESCOLAR</string>
+</resources>
