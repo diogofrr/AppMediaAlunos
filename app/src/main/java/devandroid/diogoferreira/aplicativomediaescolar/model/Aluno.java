@@ -2,13 +2,26 @@ package devandroid.diogoferreira.aplicativomediaescolar.model;
 
 public class Aluno {
     private String nome;
-    private int matematica;
-    private int portugues;
-    private int geografia;
-    private int historia;
-    private int fisica;
+    private String disciplina;
+    private double nota1;
+    private double nota2;
+    private double nota3;
+    private double nota4;
+    private double media;
+    private String status;
 
     public Aluno() {
+    }
+
+    public Aluno(String nome, String disciplina, double nota1, double nota2, double nota3, double nota4, double media, String status) {
+        this.nome = nome;
+        this.disciplina = disciplina;
+        this.nota1 = nota1;
+        this.nota2 = nota2;
+        this.nota3 = nota3;
+        this.nota4 = nota4;
+        this.media = media;
+        this.status = status;
     }
 
     public String getNome() {
@@ -19,55 +32,59 @@ public class Aluno {
         this.nome = nome;
     }
 
-    public int getMatematica() {
-        return matematica;
+    public double getNota1() {
+        return nota1;
     }
 
-    public void setMatematica(int matematica) {
-        this.matematica = matematica;
+    public void setNota1(double nota1) {
+        this.nota1 = nota1;
     }
 
-    public int getPortugues() {
-        return portugues;
+    public double getNota2() {
+        return nota2;
     }
 
-    public void setPortugues(int portugues) {
-        this.portugues = portugues;
+    public void setNota2(double nota2) {
+        this.nota2 = nota2;
     }
 
-    public int getGeografia() {
-        return geografia;
+    public double getNota3() {
+        return nota3;
     }
 
-    public void setGeografia(int geografia) {
-        this.geografia = geografia;
+    public void setNota3(double nota3) {
+        this.nota3 = nota3;
     }
 
-    public int getHistoria() {
-        return historia;
+    public double getNota4() {
+        return nota4;
     }
 
-    public void setHistoria(int historia) {
-        this.historia = historia;
+    public void setNota4(double nota4) {
+        this.nota4 = nota4;
     }
 
-    public int getFisica() {
-        return fisica;
+    public double getMedia() {
+        return media;
     }
 
-    public void setFisica(int fisica) {
-        this.fisica = fisica;
+    public void setMedia(double media) {
+        this.media = media;
     }
 
-    @Override
-    public String toString() {
-        return "Aluno{" +
-                "nome='" + nome + '\'' +
-                ", matematica=" + matematica +
-                ", portugues=" + portugues +
-                ", geografia=" + geografia +
-                ", historia=" + historia +
-                ", fisica=" + fisica +
-                '}';
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getDisciplina() {
+        return disciplina;
+    }
+
+    public void setDisciplina(String disciplina) {
+        this.disciplina = disciplina;
     }
 }
