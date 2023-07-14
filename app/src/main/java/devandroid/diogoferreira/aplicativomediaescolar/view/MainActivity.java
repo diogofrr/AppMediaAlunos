@@ -53,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        aluno = new Aluno();
         alunoController = new AlunoController(this);
 
         nomeInput = findViewById(R.id.nomeInput);
@@ -89,38 +90,42 @@ public class MainActivity extends AppCompatActivity {
             try {
                 String nome = nomeInput.getText().toString();
 
-                String status;
+                if (!nome.equals("")) {
+                    String status;
 
-                double primeiro = Double.parseDouble(primeiroBimestre.getText().toString());
-                double segundo = Double.parseDouble(segundoBimestre.getText().toString());
-                double terceiro = Double.parseDouble(terceiroBimestre.getText().toString());
-                double quarto = Double.parseDouble(quartoBimestre.getText().toString());
+                    int primeiro = Integer.parseInt(primeiroBimestre.getText().toString());
+                    int segundo = Integer.parseInt(segundoBimestre.getText().toString());
+                    int terceiro = Integer.parseInt(terceiroBimestre.getText().toString());
+                    int quarto = Integer.parseInt(quartoBimestre.getText().toString());
 
-                String disciplinaSelecionada = spinner.getSelectedItem().toString();
+                    String disciplinaSelecionada = spinner.getSelectedItem().toString();
 
-                double media = (primeiro + segundo + terceiro + quarto)/4;
+                    int media = (primeiro + segundo + terceiro + quarto)/4;
 
-                if (media >= 60) {
-                    status = "Aprovado";
+                    if (media >= 60) {
+                        status = "Aprovado";
+                    } else {
+                        status = "Reprovado";
+                    }
+
+                    aluno.setNome(nome);
+
+                    aluno.setDisciplina(disciplinaSelecionada);
+
+                    aluno.setNota1(primeiro);
+                    aluno.setNota2(segundo);
+                    aluno.setNota3(terceiro);
+                    aluno.setNota4(quarto);
+
+                    aluno.setMedia(media);
+
+                    aluno.setStatus(status);
+
+                    atualizarResultado(aluno);
+                    exibirMensagemCalculoRealizado();
                 } else {
-                    status = "Reprovado";
+                    Toast.makeText(this, "Preencha o nome do aluno.", Toast.LENGTH_SHORT).show();
                 }
-
-                aluno.setNome(nome);
-
-                aluno.setDisciplina(disciplinaSelecionada);
-
-                aluno.setNota1(primeiro);
-                aluno.setNota2(segundo);
-                aluno.setNota3(terceiro);
-                aluno.setNota4(quarto);
-
-                aluno.setMedia(media);
-
-                aluno.setStatus(status);
-
-                atualizarResultado(aluno);
-                exibirMensagemCalculoRealizado();
             } catch (NumberFormatException error) {
                 Toast.makeText(this, "Preencha valores válidos nos campos.", Toast.LENGTH_SHORT).show();
             }
@@ -129,10 +134,11 @@ public class MainActivity extends AppCompatActivity {
         limparDados.setOnClickListener(view -> limparCampos());
 
         salvarDados.setOnClickListener(view -> {
-            if (aluno.getStatus().equals("")) {
+            if (!aluno.getStatus().equals("")) {
                 alunoController.adicionarAluno(aluno);
+                Toast.makeText(this, "Aluno salvo com sucesso!", Toast.LENGTH_SHORT).show();
             } else {
-                Toast.makeText(this, "Nenhum cálculo foi realizado", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Nenhum cálculo foi realizado.", Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -167,7 +173,7 @@ public class MainActivity extends AppCompatActivity {
 
         if (statusTextView != null && resultadoTextView != null) {
             statusTextView.setText(aluno.getStatus());
-            resultadoTextView.setText(Double.toString(aluno.getMedia()));
+            resultadoTextView.setText(Integer.toString(aluno.getMedia()));
         }
     }
 
@@ -192,6 +198,8 @@ public class MainActivity extends AppCompatActivity {
         segundoBimestre.setText("");
         terceiroBimestre.setText("");
         quartoBimestre.setText("");
+
+        aluno.setStatus("");
     }
 
     private void exibirMensagemCalculoRealizado() {

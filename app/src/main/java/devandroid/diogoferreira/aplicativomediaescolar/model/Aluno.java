@@ -3,17 +3,17 @@ package devandroid.diogoferreira.aplicativomediaescolar.model;
 public class Aluno {
     private String nome;
     private String disciplina;
-    private double nota1;
-    private double nota2;
-    private double nota3;
-    private double nota4;
-    private double media;
+    private int nota1;
+    private int nota2;
+    private int nota3;
+    private int nota4;
+    private int media;
     private String status;
 
     public Aluno() {
     }
 
-    public Aluno(String nome, String disciplina, double nota1, double nota2, double nota3, double nota4, double media, String status) {
+    public Aluno(String nome, String disciplina, int nota1, int nota2, int nota3, int nota4, int media, String status) {
         this.nome = nome;
         this.disciplina = disciplina;
         this.nota1 = nota1;
@@ -32,43 +32,43 @@ public class Aluno {
         this.nome = nome;
     }
 
-    public double getNota1() {
+    public int getNota1() {
         return nota1;
     }
 
-    public void setNota1(double nota1) {
+    public void setNota1(int nota1) {
         this.nota1 = nota1;
     }
 
-    public double getNota2() {
+    public int getNota2() {
         return nota2;
     }
 
-    public void setNota2(double nota2) {
+    public void setNota2(int nota2) {
         this.nota2 = nota2;
     }
 
-    public double getNota3() {
+    public int getNota3() {
         return nota3;
     }
 
-    public void setNota3(double nota3) {
+    public void setNota3(int nota3) {
         this.nota3 = nota3;
     }
 
-    public double getNota4() {
+    public int getNota4() {
         return nota4;
     }
 
-    public void setNota4(double nota4) {
+    public void setNota4(int nota4) {
         this.nota4 = nota4;
     }
 
-    public double getMedia() {
+    public int getMedia() {
         return media;
     }
 
-    public void setMedia(double media) {
+    public void setMedia(int media) {
         this.media = media;
     }
 

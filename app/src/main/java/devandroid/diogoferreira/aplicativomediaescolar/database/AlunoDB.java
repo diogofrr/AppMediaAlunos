@@ -34,11 +34,11 @@ public class AlunoDB extends SQLiteOpenHelper {
                 COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 COLUMN_NOME + " TEXT, " +
                 COLUMN_DISCIPLINA + " TEXT, " +
-                COLUMN_NOTA1 + " REAL, " +
-                COLUMN_NOTA2 + " REAL, " +
-                COLUMN_NOTA3 + " REAL, " +
-                COLUMN_NOTA4 + " REAL, " +
-                COLUMN_MEDIA + " REAL, " +
+                COLUMN_NOTA1 + " INTEGER, " +
+                COLUMN_NOTA2 + " INTEGER, " +
+                COLUMN_NOTA3 + " INTEGER, " +
+                COLUMN_NOTA4 + " INTEGER, " +
+                COLUMN_MEDIA + " INTEGER, " +
                 COLUMN_STATUS + " TEXT)";
 
         db.execSQL(createTableQuery);
